@@ -11,11 +11,11 @@ db_name = "meu_banco"
 
 # URL de conexão para BD MySQL.
 # DATABASE_URL = F"mysql+pymysql://usuario:senha@host:porta/nome_bd" 
-DATABASE_URL = F"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
+DATABASE_URL = f"mysql+pymysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}"
 
 # Conectando ao banco de dados.
 db = create_engine(DATABASE_URL)
-Session = sessionmaker(bind=bd)
+Session = sessionmaker(bind=db)
 session = Session()
 
 @contextmanager
